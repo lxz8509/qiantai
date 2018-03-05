@@ -1,5 +1,7 @@
 <template>
-    <router-view></router-view>
+    <div>
+        商品列表
+    </div>
 </template>
 
 <script>

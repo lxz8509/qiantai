@@ -1,5 +1,7 @@
 <template>
-    <router-view></router-view>
+    <div>
+        完成交易
+    </div>
 </template>
 
 <script>
