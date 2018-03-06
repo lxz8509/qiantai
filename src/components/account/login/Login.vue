@@ -2,11 +2,11 @@
     <div class="login">
         <section>
             <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="用户名" prop="uname">
-                    <el-input type="text" v-model="ruleForm2.uname" auto-complete="off"></el-input>
+                <el-form-item label="用户名" prop="user_name">
+                    <el-input type="text" v-model="ruleForm2.user_name" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item label="确认密码" prop="upwd">
-                    <el-input type="password" v-model="ruleForm2.upwd" auto-complete="off"></el-input>
+                <el-form-item label="确认密码" prop="password">
+                    <el-input type="password" v-model="ruleForm2.password" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
@@ -22,12 +22,12 @@
     data() {
       return {
         ruleForm2: {
-          uname: "admin",
-          upwd: '123456'
+          user_name: "ivanyb",
+          password: '123'
         },
         rules2: {
-          uname:[{required:true,message:'不能为空哦~~',trigger:'blur'}] ,
-          upwd:[{required:true,message:'要有密码哦~~',trigger:'blur'}]
+          user_name:[{required:true,message:'不能为空哦~~',trigger:'blur'}] ,
+          password:[{required:true,message:'要有密码哦~~',trigger:'blur'}]
         }
       };
 
@@ -38,9 +38,9 @@
                if(res.data.status==0){
                    this.$alert("登录成功了哟~~","TIP",{
                        callback:()=>{
-                           localStorage.setItem('uname',res.data.message.uname)
+                           localStorage.setItem('user_name',res.data.message.user_name)
                         // 如果之前有别的就跳过去
-                           this.$router.push({path:this.$route.query.next||'/admin'})
+                           this.$router.push({path:this.$route.query.next||'/goods/list'})
                        }
                    })
 

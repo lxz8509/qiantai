@@ -12,6 +12,7 @@ import 'normalize.css'
 import axios from 'axios' //不是vue插件,导入之后只能在当前使用;
 import api, { domain } from './js/api.js'
 import './less/index.less'
+import './assets/css/style.css'
 Vue.use(ElementUI)
 //配置默认域名:
 axios.defaults.baseURL = domain
