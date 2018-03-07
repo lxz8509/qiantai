@@ -1,5 +1,5 @@
 <template>
-    <div>
+<div>
         <div class="section" v-for="item in groupgoods" :key="item.level1cateid">
 
             <!--子类-->
@@ -7,7 +7,7 @@
                 <h2>{{item.catetitle}}</h2>
                 <p>
 
-                    <a  v-for="subitem in item.level2cateid" :key="subitem.subcateid">手机通讯</a>         
+                    <a  v-for="subitem in item.level2cateid" :key="subitem.subcateid">{{sub.subcatetitle}}</a>         
                     <a href="/goods/40.html">更多<i>+</i></a>
                 </p>
             </div>
@@ -17,7 +17,7 @@
                     <ul class="img-list">
 
                         <li v-for="subitem in item.datas" :key="subitem.artID">
-                            <router-link :to="{name:'GoodsDetail',params:{id:subitem.artID}}">
+                            <router-link :to="{name:'goodsDetail',params:{id:subitem.artID}}">
                                 <div class="img-box">
                                     <img :src="subitem.img_url">
                                 </div>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   </div>
 </template>
 
 <script>
@@ -52,10 +52,11 @@ export default {
         }
     },
     methods:{
-        getGtoupGoods(){
+        getGroupGoods(){
             this.$http.get(this.$api.goodsContent).then(res=>{
+                
                 if(res.data.status ==0){
-                    console.log(res.data.message)
+               
                     this.groupgoods = res.data.message
                 }
             })
@@ -63,7 +64,7 @@ export default {
     
     },
     created(){
-        this.getGtoupGoods();
+        this.getGroupGoods();
     }
 
 };

@@ -3,8 +3,8 @@
         <!-- 公共头部 -->
         <app-header></app-header>
         <!-- 变化主体 -->
-        <app-footer></app-footer>
         <router-view></router-view>
+        <app-footer></app-footer>
     </div>
 </template>
 
@@ -20,8 +20,4 @@
 </script>
 
 <style scoped lang="less">
-.footer {
-    margin-top: 1px;
-    background: #333;
-}
 </style>

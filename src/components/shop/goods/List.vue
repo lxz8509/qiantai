@@ -32,7 +32,7 @@
                                             <a href="/goods/40.html">{{item. title}}</a>
                                         </dt>
                                         <dd>
-                                            <a v-for="subitem in item.subcates" :key="subitem.id" href="/goods/43.html">{{subitem.title}}</a>
+                                             <router-link to="" v-for="subitem in item.subcates" :key="subitem.id">{{ subitem.title }}&nbsp;</router-link>
                                         </dd>
                                     </dl>
                                 </div>
@@ -45,7 +45,6 @@
                 <!--轮播图-->
                 <div class="left-705">
                     <div class="banner-img">
-                     
                             <el-carousel height="350px">
                                 <el-carousel-item v-for="item in top.sliderlist" :key="item.id">
                                     <img style="height:100%" :src="item.img_url" alt="">
@@ -59,9 +58,7 @@
                 <!--/轮播图-->
 
                 <!--下边商品列表-->
-                <app-aside :list="top.toplist">
-
-                </app-aside>
+                <app-aside :list="top.toplist"></app-aside>
 
                 <!--/下边商品列表-->
             </div>

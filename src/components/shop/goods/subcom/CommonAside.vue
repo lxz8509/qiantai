@@ -1,15 +1,13 @@
 <template>
-    <div>
         <div class="left-220">
-                <ul class="side-img-list">
-                 
+                <ul class="side-img-list">                
                     <li v-for="(item,i) in list" :key="item.id">
                         <div class="img-box">
                             <label>{{i+1}}</label>
                             <img :src="item.img_url">
                         </div>
                         <div class="txt-box">
-                            <a href="/goods/show-98.html">{{item.title}}</a>
+                            <router-link :to="{name: 'goodsDetail', params: {id: item.id}}">{{item.title}}</router-link>
                             <span>{{item.add_time|data}}</span>
                         </div>
                     </li>
@@ -17,7 +15,6 @@
                  
                 </ul>
             </div>
-    </div>
 </template>
 
 <script>
